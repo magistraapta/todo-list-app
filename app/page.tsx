@@ -1,13 +1,12 @@
 "use client"
 import '../styles/globals.css'
-import React, { use, useState } from 'react'
-import { title } from 'process'
+import React, { useState } from 'react'
 
 function page() {
     const [items, setItems] = useState('')
     const [todos, setTodos] = useState([{title: 'ngoding' , id: 1}])
 
-    const addTodos = (items: string) => {
+    const addTodos = (items: any) => {
         setTodos([...todos, {title : items,  id: Math.random()}])
     }
 
@@ -36,10 +35,10 @@ function page() {
                     </form>
                 </div>
                 <ul className=' mx-12 mt-4'>
-                            {todos.map((todos) => {
-                                return ( <li key={todos.id} className='py-2'>{todos.title} <input type="checkbox" /></li>)
-                            })}
-                        </ul>
+                    {todos.map((todos) => {
+                        return ( <li key={todos.id} className='py-2'>{todos.title} <input type="checkbox" /></li>)
+                    })}
+                </ul>
             </div>
         </div>
     </div>
